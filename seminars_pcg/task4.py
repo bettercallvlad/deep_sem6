@@ -19,7 +19,14 @@
 # в удобном для чтения виде. Для формирования результатов
 # используйте генераторное выражение.\
 
+__all__ = ['zagad', 'mnogo_zagad',
+           'create_counter_dict', 'show_counter_dict']
+
 _tries_dict = {}
+_ZAGADKI = {
+        'Зимой и летом одним цветом': ['ель', 'ёлка', 'сосна'],
+        'Не лает, не кусает, в дом не пускает': ['Замок'],
+}
 
 
 def zagad(text: str, ans_list: list[str], tries: int = 3) -> int:
@@ -39,12 +46,7 @@ def zagad(text: str, ans_list: list[str], tries: int = 3) -> int:
 
 
 def mnogo_zagad():
-    ZAGADKI = {
-        'Зимой и летом одним цветом': ['ель', 'ёлка', 'сосна'],
-        'Не лает, не кусает, в дом не пускает': ['Замок'],
-    }
-
-    for key, value in ZAGADKI.items():
+    for key, value in _ZAGADKI.items():
         create_counter_dict(key, zagad(key, value))
 
 

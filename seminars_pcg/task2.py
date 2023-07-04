@@ -17,6 +17,9 @@ from random import randint
 from sys import argv
 
 
+__all__ = ['ugadaika']
+
+
 def ugadaika(start: int, stop: int, tries: int) -> bool:
     """Функция принимает на вход три целых числа:
        нижнюю и верхнюю границу и количество попыток.
@@ -39,6 +42,6 @@ def ugadaika(start: int, stop: int, tries: int) -> bool:
 
 if __name__ == '__main__':
     FIRST_ARG = 1
-    TRIRD_ARG = 4
-    st, end, tr = tuple(map(int, argv[FIRST_ARG:TRIRD_ARG]))
+    THRIRD_ARG = 4
+    st, end, tr = tuple(map(int, argv[FIRST_ARG:THRIRD_ARG]))
     print(ugadaika(st, end, tr))
